@@ -1,37 +1,19 @@
-## Welcome to GitHub Pages
+# cbirdcn
 
-You can use the [editor on GitHub](https://github.com/cbirdcn/cbirdcn.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+### 随笔：
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+[issues](https://github.com/cbirdcn/cbirdcn.github.io/issues)
 
-### Markdown
+### 总结：
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+##### [服务端重点-架构](https://cbirdcn.github.io/summary/服务端重点-架构)
+##### [服务端重点-算法](https://cbirdcn.github.io/summary/服务端重点-算法)
+##### [服务端重点-计算机理论与实践](https://cbirdcn.github.io/summary/服务端重点-计算机理论与实践)
+##### [服务端重点-面向对象与设计模式](https://cbirdcn.github.io/summary/服务端重点-面向对象与设计模式)
+##### [服务端重点-性能、调优和测试](https://cbirdcn.github.io/summary/服务端重点-性能、调优和测试)
+##### [服务端重点-跨语言编程](https://cbirdcn.github.io/summary/服务端重点-跨语言编程)
+##### [服务端重点-云服务](https://cbirdcn.github.io/summary/服务端重点-云服务)
 
-```markdown
-Syntax highlighted code block
+### 教程
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/cbirdcn/cbirdcn.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+##### [教程-kratos创建新项目](https://cbirdcn.github.io/tutorial/教程-kratos创建新项目)
