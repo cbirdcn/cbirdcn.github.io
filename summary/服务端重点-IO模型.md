@@ -358,7 +358,7 @@ ep对象初始化成员，包括自旋锁 `spin_lock`、互斥锁mutex、等待�
 
 `epoll_ctl()`的内核实现：
 
-其中op是ADD,MOD,DEL。fd是要监听的描述符。event是我们关心的events(event含data和events，data.fd是文件描述符比如listen_sock，events是一个字节的掩码如EPOLLIN | EPOLLET)。
+其中op是ADD,MOD,DEL。fd是要监听的描述符。event是我们关心的events(event含data和events，data.fd是文件描述符比如listen_sock，events是一个字节的掩码如`EPOLLIN | EPOLLET`)。
 
 ```c
 SYSCALL_DEFINE4(epoll_ctl, int, epfd, int, op, int, fd, struct epoll_event __user *, event)
@@ -736,7 +736,15 @@ AIO实现了I/O全流程的非阻塞，就是应用进程发出系统调用后�
 
 比如发起一笔批量转账，但是批量转账处理比较耗时，这时候后端可以先告知前端转账提交成功，等到结果处理完，再通知前端结果即可。
 
-## 网络服务器
+## 总结五种模型
+
+Linux中的AIO不是真正的异步，Windows中IOCP是真正异步，这是由内核设计方式决定的。
+
+Java曾经想在用户空间层面结合epoll的内核设计伪AIO模型，但是效率还不如epoll。而Go对epoll的封装由于协程的存在避免了用户态与内核态的数据交互与线程切换，所以效率非常高。
+
+如今epoll的性能瓶颈体现在阻塞期间可能遭到大量请求的冲击导致宕机、传输数据时需要阻塞拷贝，虽然AIO可以用全面的非阻塞减少耗时、用零拷贝和回调降低CPU和阻塞，但是还是无法解决I/O设备性能太低的问题，并且可能引入死亡回调。
+
+所以，在当前低效的I/O设备和可控的并发编程面前，epoll还是最流行的I/O模型。想要AIO大规模发展，需要Linux内核的更新以及I/O设备的性能提升。
 
 ## 主要参考
 
@@ -753,3 +761,5 @@ AIO实现了I/O全流程的非阻塞，就是应用进程发出系统调用后�
 [Epoll的使用详解](https://www.jianshu.com/p/ee381d365a29)
 
 [Linux源码 TOMOYO Linux Cross Reference linux-6.1.52](https://tomoyo.osdn.jp/cgi-bin/lxr/source/fs/eventpoll.c?v=linux-6.1.52#L973)
+
+[一文搞懂AIO的本质](http://www.52im.net/thread-4283-1-1.html)
