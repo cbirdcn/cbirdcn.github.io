@@ -7,6 +7,7 @@
 ##### [服务端重点-架构](https://cbirdcn.github.io/summary/服务端重点-架构)
 ##### [服务端重点-算法](https://cbirdcn.github.io/summary/服务端重点-算法)
 ##### [服务端重点-计算机理论与实践](https://cbirdcn.github.io/summary/服务端重点-计算机理论与实践)
+##### [服务端重点-IO模型](https://cbirdcn.github.io/summary/服务端重点-IO模型)
 ##### [服务端重点-面向对象与设计模式](https://cbirdcn.github.io/summary/服务端重点-面向对象与设计模式)
 ##### [服务端重点-性能、调优和测试](https://cbirdcn.github.io/summary/服务端重点-性能、调优和测试)
 ##### [服务端重点-跨语言编程-go](https://cbirdcn.github.io/summary/服务端重点-跨语言编程-go)
