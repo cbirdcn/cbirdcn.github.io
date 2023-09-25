@@ -57,7 +57,7 @@ I/O 即 input/output，输入/输出。
 
 #### 32位Linux操作系统虚拟内存分布图
 
-![32位Linux操作系统虚拟内存分布图](https://picx.zhimg.com/80/v2-a4c01da530e342cccd2d178d33f0e16a_720w.webp?source=1940ef5c)
+![32位Linux操作系统虚拟内存分布图](https://github.com/cbirdcn/note/assets/60061199/f7b43ae0-0781-4e45-83e6-ebcf9d506c59)
 
 以C/C++编写的程序为例，从低到高分别是 7 种不同的内存段：
 
@@ -87,7 +87,7 @@ I/O 即 input/output，输入/输出。
 - 拷贝数据阶段：将数据从内核缓冲区拷贝到用户进程缓冲区
 
 如图：
-![操作系统的一次I/O过程](https://s6.51cto.com/oss/202112/01/fffa9054b8c8605c78d1aabecd340454.jpg)
+![操作系统的一次I/O过程](https://github.com/cbirdcn/note/assets/60061199/1ef9fc4c-8a30-4c20-bd6d-6f6580d81b18)
 
 后面将会围绕这个过程展开关于I/O模型的分析，让有限的CPU和内存资源能提供高效的服务。在网络I/O层面，就是设计出高并发的高吞吐的网络服务器。
 
@@ -97,7 +97,7 @@ I/O 即 input/output，输入/输出。
 
 此次I/O操作，因为进程从发起系统调用起一直被阻塞，直到系统调用成功返回。所以称之为阻塞I/O。
 
-![阻塞I/O模型](https://s2.51cto.com/oss/202112/01/de7ae40ad632328a2e4021dad080b337.jpg)
+![阻塞I/O模型](https://github.com/cbirdcn/note/assets/60061199/ce6106b3-4d6b-43de-af02-9dcdd0d5fa02)
 
 阻塞I/O阻塞了太久用户进程，浪费计算机性能，可以使用非阻塞I/O优化。
 
@@ -105,7 +105,7 @@ I/O 即 input/output，输入/输出。
 
 如果内核数据还没准备好，可以先返回错误信息给用户进程，让它不需要等待，然后通过**轮询**的方式再来请求。这就是非阻塞I/O。
 
-![非阻塞I/O模型](https://s5.51cto.com/oss/202112/01/5bccfc91f778ae5c64b42f574ae989c4.jpg)
+![非阻塞I/O模型](https://github.com/cbirdcn/note/assets/60061199/d928775e-89b7-4da4-9e24-ba1982ba89f0)
 
 非阻塞I/O的流程如下：
 
@@ -169,7 +169,7 @@ I/O复用模型核心思路是：
 
 进程通过调用select函数，可以同时监控多个fd，**在select函数监控的fd中，只要有任何一个数据状态准备就绪了，select函数就会返回可读状态**，这时应用进程再发起recvfrom请求去读取数据。
 
-![I/O多路复用之select](https://s3.51cto.com/oss/202112/01/3243e4b923429ceb74ca48c6b581eabe.jpg)
+![I/O多路复用之select](https://github.com/cbirdcn/note/assets/60061199/96709f8c-62cc-4834-bfc5-43df04a2b82e)
 
 非阻塞I/O模型(NIO)中，需要N(N>=1)次轮询系统调用，然而借助select的I/O多路复用模型，只需要发起一次询问就够了,大大优化了性能。
 
@@ -249,7 +249,7 @@ epoll模型采用事件通知机制来触发相关的I/O操作。
 
 epoll模型仅在Linux中实现。
 
-![I/O多路复用之epoll](https://s3.51cto.com/oss/202112/01/c5310b9ceaf303e1fc9440b15318fd01.jpg)
+![I/O多路复用之epoll](https://github.com/cbirdcn/note/assets/60061199/35fa1d40-b876-4ec5-90b7-21eea02a288d)
 
 [epoll内核源码详解](https://blog.csdn.net/runner668/article/details/80498202)
 
@@ -699,7 +699,7 @@ I/O多路复用的方案到此为止。
 
 进程收到信号之后，立即调用recvfrom，去读取数据。
 
-![信号驱动模型](https://s3.51cto.com/oss/202112/01/81ad3fba52d386979338876b1cedfbc4.jpg)
+![信号驱动模型](https://github.com/cbirdcn/note/assets/60061199/cfce1c73-8856-405a-9c10-6af51f1e2474)
 
 信号驱动I/O模型，在应用进程发出信号后，是立即返回的，不会阻塞进程。
 
@@ -729,7 +729,7 @@ AIO实现了I/O全流程的非阻塞，就是应用进程发出系统调用后�
 
 等内核数据准备好，将数据拷贝到用户进程缓冲区，发送信号通知用户进程I/O操作执行完毕。
 
-![异步I/O](https://s3.51cto.com/oss/202112/01/16e73ad7806ab8fd3dcffe6b560472ed.jpg)
+![异步I/O模型](https://github.com/cbirdcn/note/assets/60061199/ca90af8c-4376-47eb-bf41-7b47baceddf0)
 
 异步I/O的优化思路很简单，只需要向内核发送一次请求，就可以完成数据状态询问和数据拷贝的所有操作，并且不用阻塞等待结果。日常开发中，有类似思想的业务场景：
 
