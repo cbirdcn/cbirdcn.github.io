@@ -13,7 +13,7 @@
 ##### [服务端重点-跨语言编程-go](https://cbirdcn.github.io/summary/服务端重点-跨语言编程-go)
 ##### [服务端重点-跨语言编程-other](https://cbirdcn.github.io/summary/服务端重点-跨语言编程-other)
 ##### [服务端重点-云服务](https://cbirdcn.github.io/summary/服务端重点-云服务)
-##### [服务端重点-MySQL](https://cbirdcn.github.io/summary/服务端重点-MySQL)
+##### [数据库重点-MySQL](https://cbirdcn.github.io/summary/数据库重点-MySQL)
 
 ### 教程
 
